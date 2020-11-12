@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" cont选ent="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="../../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#add").click(function () {
+                //1,方式一
+                //        var $option = $("#select1 option:selected");  //获取选中的选项
+                //        var $remove = $option.remove(); //删除下拉列表中选中的选项
+                //        $remove.appendTo("#select2");  //追加给对方
+                //2，方式二
+                var $option = $("#select1 option:selected");  //获取选中的选项
+                $option.appendTo("#select2");  //追加给对方
+            });
+            $("#add_all").click(function () {
+                var $option = $("#select1 option");
+                $option.appendTo("#select2");
+            });
+            $("#remove").click(function () {
+                var $option = $("#select2 option:selected");
+                $option.appendTo("#select1");
+            });
+            $("#remove_all").click(function () {
+                var $option = $("#select2 option");
+                $option.appendTo("#select1");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h3>下拉框应用</h3>
+    <table>
+        <tr>
+            <td>
+                <select id="select1" multiple="multiple" style="width:100px;">
+                    <option value="News">News</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Education">Education</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Art">Art</option>
+                </select>
+            </td>
+            <td>
+                <button id="add">
+                    > </button><br />
+                <button id="add_all">
+                    >>
+                </button><br />
+                <button id="remove_all">
+                    << 
+                </button><br />
+                <button id="remove">
+                    < 
+                </button>
+            </td>
+            <td>
+                <select id="select2" multiple="multiple" style="width:100px;">
+                </select>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
